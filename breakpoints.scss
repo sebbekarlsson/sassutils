@@ -1,0 +1,40 @@
+/**
+ * prefix: bp_
+ */
+
+
+/**
+ * xtra-large display
+ */
+@mixin bp_xl {
+    @media only screen and (max-width: 1680px) {
+        @content;
+    }
+}
+
+/**
+ * Macbook
+ */
+@mixin bp_l {
+    @media only screen and (max-width: 1280px) {
+        @content;
+    }
+}
+
+/**
+ * Ipad pro
+ */
+@mixin bp_medium {
+    @media only screen and (max-width: 1024px) {
+        @content;
+    }
+}
+
+/**
+ * Iphone 6
+ */
+@mixin bp_small {
+    @media only screen and (max-width: 375px) {
+        @content;
+    }
+}

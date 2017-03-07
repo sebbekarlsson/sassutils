@@ -1,0 +1,122 @@
+/**
+ * prefix: bp_
+ */
+/**
+ * xtra-large display
+ */
+/**
+ * Macbook
+ */
+/**
+ * Ipad pro
+ */
+/**
+ * Iphone 6
+ */
+/**
+ * prefix: h_
+ */
+/**
+ * prefix: m_
+ */
+/**
+ * Navigationbar layout
+ *
+ * @param pixels $height
+ */
+/**
+ * Make content inside DOM centered
+ *
+ * @param bool $horizontal
+ * @param bool $vertical
+ */
+/**
+ * Center an item that is either fixed or absolute.
+ *
+ * @param bool $horizontal
+ * @param bool $vertical
+ */
+/**
+ * Completely hide DOM
+ */
+/**
+ * Makes a DOM the same size as the window
+ */
+/**
+ * Make DOM overlay screen,
+ * it will also follow when scrolling
+ */
+/**
+ * Remove default styles from buttons, inputs, selects etc...
+ */
+/**
+ * Remove unwanted CSS rules
+ */
+/**
+ * Remove unwanted CSS rules from everything
+ */
+/**
+ * Cross-browser transition
+ */
+* {
+  margin: 0;
+  padding: 0; }
+
+.split {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: column;
+  flex-direction: row; }
+  .split > * {
+    flex: 1; }
+  @media only screen and (max-width: 375px) {
+    .split {
+      flex-direction: column;
+      display: block; }
+      .split .part {
+        width: 100%; } }
+  .split > * {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-size: 100%;
+    background-size: cover;
+    font-size: 18px;
+    font-size: 1.125rem;
+    background-image: url("https://unsplash.it/800/800/?random"); }
+  @media only screen and (max-width: 375px) {
+    .split > * {
+      min-height: 200px; } }
+
+.navbar {
+  display: block;
+  width: 100%;
+  height: 48px;
+  background-color: #1abc9c; }
+  .navbar, .navbar ul {
+    box-sizing: border-box; }
+  .navbar ul, .navbar li, .navbar a {
+    display: inline-block;
+    height: 100%; }
+  .navbar ul {
+    list-style: none; }
+    .navbar ul li a {
+      display: inline-block;
+      height: 100%;
+      line-height: 48px;
+      text-decoration: none; }
+  .navbar a {
+    color: white;
+    padding-left: 1rem;
+    padding-right: 1rem; }
+
+/*# sourceMappingURL=style.css.map */

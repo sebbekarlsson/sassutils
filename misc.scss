@@ -1,0 +1,173 @@
+/**
+ * prefix: m_
+ */
+
+
+/**
+ * Navigationbar layout
+ *
+ * @param pixels $height
+ */
+@mixin m_navbar($height: 48px) {
+    display: block;
+    width: 100%;
+    height: $height;
+
+    &, ul {
+        box-sizing: border-box;
+    }
+
+    ul, li, a {
+        display: inline-block;
+        height: 100%;
+    }
+
+    ul {
+        list-style: none;
+
+        li {
+            a {
+                display: inline-block;
+                height: 100%;
+                line-height: $height;
+                text-decoration: none;
+            }
+        }
+    }
+}
+
+/**
+ * Make content inside DOM centered
+ *
+ * @param bool $horizontal
+ * @param bool $vertical
+ */
+@mixin m_center($horizontal: true, $vertical: true) {
+    @include h_display_flex();
+
+    flex-wrap: wrap;
+    flex-direction: column;
+
+    @if ($horizontal) {
+        justify-content: center;
+    }
+
+    @if ($vertical) {
+        align-items: center;
+    }
+}
+
+/**
+ * Center an item that is either fixed or absolute.
+ *
+ * @param bool $horizontal
+ * @param bool $vertical
+ */
+@mixin m_center_absolute($horizontal: true, $vertical: true) {
+    @if ($horizontal) {
+        left: 0;
+        right: 0;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    @if ($vertical) {
+        top: 0;
+        bottom: 0;
+        margin-top: auto;
+        margin-bottom: auto;
+    }
+}
+
+@mixin m_split($x: true, $y: false, $classname: part) {
+    @include h_display_flex();
+
+    @if ($x) {
+        flex-direction: column;
+    }
+
+    @if ($y) {
+        flex-direction: row;
+
+        & > * {
+            flex: 1;
+        }
+
+        @include bp_small() {
+            flex-direction: column;
+            display: block;
+
+            .#{$classname} {
+                width: 100%;
+            }
+        }
+    }
+}
+
+/**
+ * Completely hide DOM
+ */
+@mixin m_hide() {
+    display: none;
+    opacity: 0;
+}
+
+/**
+ * Makes a DOM the same size as the window
+ */
+@mixin m_fullscreen() {
+    width: 100%;
+    height: 100vh;
+}
+
+/**
+ * Make DOM overlay screen,
+ * it will also follow when scrolling
+ */
+@mixin m_screen_overlay() {
+    @include m_fullscreen();
+
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 100;
+}
+
+/**
+ * Remove default styles from buttons, inputs, selects etc...
+ */
+@mixin m_unstyle() {
+    -webkit-appearance: none;
+    border-radius: 0;
+    outline: none;
+    border: none;
+    display: inline-block;
+}
+
+/**
+ * Remove unwanted CSS rules
+ */
+@mixin m_reset() {
+    margin: 0;
+    padding: 0;
+}
+
+/**
+ * Remove unwanted CSS rules from everything
+ */
+@mixin m_reset_all() {
+    * {
+        @include m_reset();
+    }
+}
+
+/**
+ * Cross-browser transition
+ */
+@mixin m_transition($args...) {
+    -webkit-transition: $args;
+    -moz-transition: $args;
+    -ms-transition: $args;
+    -o-transition: $args;
+    transition: $args;
+}

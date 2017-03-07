@@ -1,0 +1,33 @@
+@import '../utils.scss';
+
+
+@include m_reset_all();
+
+.split {
+    @include m_split($y: true);
+
+    & > * {
+        @include m_center();
+        @include h_background-size_cover();
+        @include h_font-size(18px);
+
+        background-image: url("https://unsplash.it/800/800/?random");
+    }
+
+    @include bp_small() {
+        & > * {
+            min-height: 200px;
+        }
+    }
+}
+
+.navbar {
+    @include m_navbar();
+    background-color: #1abc9c;
+
+    a {
+        color: white;
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+}

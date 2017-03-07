@@ -1,0 +1,27 @@
+/**
+ * prefix: h_
+ */
+
+
+@mixin h_background-size_cover() {
+    background-size: 100%;
+    background-size: cover;
+}
+
+@mixin h_display_flex() {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+}
+
+@function h_calculate_rem($size) {
+    $remSize: $size / 16px;
+    @return $remSize * 1rem;
+}
+
+@mixin h_font-size($size) {
+    font-size: $size;
+    font-size: h_calculate_rem($size);
+}
