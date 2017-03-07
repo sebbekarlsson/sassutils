@@ -8,10 +8,16 @@
  *
  * @param pixels $height
  */
-@mixin m_navbar($height: 48px) {
+@mixin m_navbar($height: 48px, $fixed: false) {
     display: block;
     width: 100%;
     height: $height;
+
+    @if ($fixed) {
+        position: fixed;
+        top: 0;
+        left: 0;
+    }
 
     &, ul {
         box-sizing: border-box;
@@ -34,6 +40,32 @@
             }
         }
     }
+}
+
+/**
+ * Overlay, can be used for background images etc.
+ *
+ * @param color $background-color
+ * @param color $color
+ */
+@mixin m_overlay($background-color: rgba(0, 0, 0, 0.6), $color: white) {
+    @include m_center();
+    width: 100%;
+    height: 100%;
+    background-color: $background-color;
+    color: $color;
+}
+
+/**
+ * Hero with support for background-image.
+ * Can be used for sliders etc.
+ *
+ * @param pixels $height 
+ */
+@mixin m_hero($height: 640px) {
+    @include h_background-size_cover();
+    width: 100%;
+    height: $height;
 }
 
 /**

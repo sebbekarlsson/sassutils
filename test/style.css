@@ -25,6 +25,18 @@
  * @param pixels $height
  */
 /**
+ * Overlay, can be used for background images etc.
+ *
+ * @param color $background-color
+ * @param color $color
+ */
+/**
+ * Hero with support for background-image.
+ * Can be used for sliders etc.
+ *
+ * @param pixels $height 
+ */
+/**
  * Make content inside DOM centered
  *
  * @param bool $horizontal
@@ -62,23 +74,15 @@
   margin: 0;
   padding: 0; }
 
-.split {
-  display: -webkit-box;
-  display: -moz-box;
-  display: -ms-flexbox;
-  display: -webkit-flex;
-  display: flex;
-  flex-direction: column;
-  flex-direction: row; }
-  .split > * {
-    flex: 1; }
-  @media only screen and (max-width: 375px) {
-    .split {
-      flex-direction: column;
-      display: block; }
-      .split .part {
-        width: 100%; } }
-  .split > * {
+* {
+  font-family: 'Roboto', sans-serif; }
+
+.hero {
+  background-size: 100%;
+  background-size: cover;
+  width: 100%;
+  height: 640px; }
+  .hero .overlay {
     display: -webkit-box;
     display: -moz-box;
     display: -ms-flexbox;
@@ -88,15 +92,38 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-size: 100%;
-    background-size: cover;
-    font-size: 18px;
-    font-size: 1.125rem;
-    height: 200px;
-    background-image: url("https://unsplash.it/800/800/?random"); }
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white; }
+
+.articles {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: column;
+  flex-direction: row; }
+  .articles > * {
+    flex: 1; }
   @media only screen and (max-width: 375px) {
-    .split > * {
-      min-height: 200px; } }
+    .articles {
+      flex-direction: column;
+      display: block; }
+      .articles .part {
+        width: 100%; } }
+  .articles > * {
+    min-height: 200px;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; }
 
 .navbar {
   display: block;
