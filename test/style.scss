@@ -8,7 +8,7 @@
 }
 
 .hero {
-    @include m_hero();
+    @include m_hero($height: 100vh);
 
     .overlay {
         @include m_overlay();

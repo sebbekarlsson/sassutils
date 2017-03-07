@@ -60,12 +60,17 @@
  * Hero with support for background-image.
  * Can be used for sliders etc.
  *
- * @param pixels $height 
+ * @param pixels $height
+ * @param bool $fixed-background 
  */
-@mixin m_hero($height: 640px) {
+@mixin m_hero($height: 640px, $fixed-background: false) {
     @include h_background-size_cover();
     width: 100%;
     height: $height;
+
+    @if ($fixed-background) {
+        background-attachment: fixed;
+    }
 }
 
 /**
