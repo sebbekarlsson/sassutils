@@ -2,6 +2,9 @@
  * prefix: bp_
  */
 /**
+ * xtra-xtra-large display
+ */
+/**
  * xtra-large display
  */
 /**
@@ -83,6 +86,11 @@
  */
 /**
  * Used to limit the site width.
+ *
+ * @param pixels $max-width
+ */
+/**
+ * Typography type: 0
  */
 * {
   margin: 0;
@@ -92,7 +100,7 @@
   font-family: 'Roboto', sans-serif; }
 
 .sitecontent {
-  max-width: 86.25rem;
+  max-width: 120rem;
   margin-left: auto;
   margin-right: auto; }
 

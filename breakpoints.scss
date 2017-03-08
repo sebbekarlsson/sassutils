@@ -4,6 +4,15 @@
 
 
 /**
+ * xtra-xtra-large display
+ */
+@mixin bp_xxxl {
+    @media only screen and (max-width: 1920px) {
+        @content;
+    }
+}
+
+/**
  * xtra-large display
  */
 @mixin bp_xxl {
