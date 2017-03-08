@@ -157,7 +157,7 @@
             flex: 1;
         }
 
-        @include bp_medium() {
+        @include bp_4() {
             flex-direction: column;
             display: block;
 
@@ -241,7 +241,7 @@
  *
  * @param pixels $max-width
  */
-@mixin m_sitecontent($max-width: 1920px) {
+@mixin m_sitecontent($max-width: $bp_0) {
     max-width: h_calculate_rem($max-width);
     margin-left: auto;
     margin-right: auto;
