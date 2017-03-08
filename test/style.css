@@ -5,6 +5,9 @@
  * xtra-large display
  */
 /**
+ * Macbook +
+ */
+/**
  * Macbook
  */
 /**
@@ -44,6 +47,13 @@
  * @param bool $vertical
  */
 /**
+ * Similar to m_center, but old way of doing it.
+ * (without flexbox)
+ *
+ * @param bool $horizontal
+ * @param bool $vertical
+ */
+/**
  * Center an item that is either fixed or absolute.
  *
  * @param bool $horizontal
@@ -71,6 +81,9 @@
 /**
  * Cross-browser transition
  */
+/**
+ * Used to limit the site width.
+ */
 * {
   margin: 0;
   padding: 0; }
@@ -78,11 +91,39 @@
 * {
   font-family: 'Roboto', sans-serif; }
 
+.sitecontent {
+  max-width: 86.25rem;
+  margin-left: auto;
+  margin-right: auto; }
+
 .hero {
   background-size: 100%;
   background-size: cover;
+  background-position: center;
   width: 100%;
   height: 100vh; }
+  .hero h1 {
+    font-size: 34px;
+    font-size: 2.125rem;
+    font-weight: 300;
+    line-height: 2.5rem;
+    margin: 0 0 16px; }
+  .hero h2 {
+    font-size: 24px;
+    font-size: 1.5rem;
+    font-weight: 300;
+    line-height: 2rem;
+    margin: 0 0 14px; }
+  .hero p {
+    font-size: 15px;
+    font-size: 0.9375rem;
+    font-weight: 400;
+    line-height: 1.5rem;
+    margin: 0 0 0.875rem; }
+  .hero a {
+    text-decoration: none; }
+  .hero a:hover {
+    text-decoration: none; }
   .hero .overlay {
     display: -webkit-box;
     display: -moz-box;
@@ -108,11 +149,11 @@
   flex-direction: row; }
   .articles > * {
     flex: 1; }
-  @media only screen and (max-width: 375px) {
+  @media only screen and (max-width: 1024px) {
     .articles {
       flex-direction: column;
       display: block; }
-      .articles .part {
+      .articles > * {
         width: 100%; } }
   .articles > * {
     min-height: 200px;
@@ -125,12 +166,44 @@
     flex-direction: column;
     justify-content: center;
     align-items: center; }
+    .articles > * > * {
+      display: -webkit-box;
+      display: -moz-box;
+      display: -ms-flexbox;
+      display: -webkit-flex;
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center; }
+      .articles > * > * h1 {
+        font-size: 34px;
+        font-size: 2.125rem;
+        font-weight: 300;
+        line-height: 2.5rem;
+        margin: 0 0 16px; }
+      .articles > * > * h2 {
+        font-size: 24px;
+        font-size: 1.5rem;
+        font-weight: 300;
+        line-height: 2rem;
+        margin: 0 0 14px; }
+      .articles > * > * p {
+        font-size: 15px;
+        font-size: 0.9375rem;
+        font-weight: 400;
+        line-height: 1.5rem;
+        margin: 0 0 0.875rem; }
+      .articles > * > * a {
+        text-decoration: none; }
+      .articles > * > * a:hover {
+        text-decoration: none; }
 
 .navbar {
   display: block;
   width: 100%;
-  height: 48px;
-  background-color: #1abc9c; }
+  height: 4rem;
+  background-color: black; }
   .navbar, .navbar ul {
     box-sizing: border-box; }
   .navbar ul, .navbar li, .navbar a {
@@ -141,8 +214,30 @@
     .navbar ul li a {
       display: inline-block;
       height: 100%;
-      line-height: 48px;
+      line-height: 4rem;
       text-decoration: none; }
+  .navbar h1 {
+    font-size: 34px;
+    font-size: 2.125rem;
+    font-weight: 300;
+    line-height: 2.5rem;
+    margin: 0 0 16px; }
+  .navbar h2 {
+    font-size: 24px;
+    font-size: 1.5rem;
+    font-weight: 300;
+    line-height: 2rem;
+    margin: 0 0 14px; }
+  .navbar p {
+    font-size: 15px;
+    font-size: 0.9375rem;
+    font-weight: 400;
+    line-height: 1.5rem;
+    margin: 0 0 0.875rem; }
+  .navbar a {
+    text-decoration: none; }
+  .navbar a:hover {
+    text-decoration: none; }
   .navbar a {
     color: white;
     padding-left: 1rem;

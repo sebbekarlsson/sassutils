@@ -6,8 +6,17 @@
 /**
  * xtra-large display
  */
-@mixin bp_xl {
+@mixin bp_xxl {
     @media only screen and (max-width: 1680px) {
+        @content;
+    }
+}
+
+/**
+ * Macbook +
+ */
+@mixin bp_xl {
+    @media only screen and (max-width: 1380px) {
         @content;
     }
 }

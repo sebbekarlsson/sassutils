@@ -7,8 +7,13 @@
     font-family: 'Roboto', sans-serif;    
 }
 
+.sitecontent {
+    @include m_sitecontent();
+}
+
 .hero {
     @include m_hero($height: 100vh);
+    @include m_typography_0();
 
     .overlay {
         @include m_overlay();
@@ -21,12 +26,18 @@
     & > * {
         min-height: 200px;
         @include m_center();
+
+        & > * {
+            @include m_center();
+            @include m_typography_0();
+        }
     }
 }
 
 .navbar {
     @include m_navbar();
-    background-color: #1abc9c;
+    @include m_typography_0();
+    background-color: black;
 
     a {
         color: white;

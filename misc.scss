@@ -8,7 +8,7 @@
  *
  * @param pixels $height
  */
-@mixin m_navbar($height: 48px, $fixed: false) {
+@mixin m_navbar($height: h_calculate_rem(64px), $fixed: false) {
     display: block;
     width: 100%;
     height: $height;
@@ -65,6 +65,7 @@
  */
 @mixin m_hero($height: 640px, $fixed-background: false) {
     @include h_background-size_cover();
+    background-position: center;
     width: 100%;
     height: $height;
 
@@ -95,6 +96,32 @@
 }
 
 /**
+ * Similar to m_center, but old way of doing it.
+ * (without flexbox)
+ *
+ * @param bool $horizontal
+ * @param bool $vertical
+ */
+@mixin m_center_old($horizontal: true, $vertical: true) {
+    @if ($vertical) {
+        display: inline-table;
+
+        & > * {
+            display: table-cell;
+            vertical-align: middle;
+        }
+    }
+
+    &, & > * {
+        @if ($horizontal) {
+            text-align: center;
+        } @else {
+            text-align: left;
+        }
+    }
+}
+
+/**
  * Center an item that is either fixed or absolute.
  *
  * @param bool $horizontal
@@ -116,7 +143,7 @@
     }
 }
 
-@mixin m_split($x: true, $y: false, $classname: part) {
+@mixin m_split($x: true, $y: false) {
     @include h_display_flex();
 
     @if ($x) {
@@ -130,11 +157,11 @@
             flex: 1;
         }
 
-        @include bp_small() {
+        @include bp_medium() {
             flex-direction: column;
             display: block;
 
-            .#{$classname} {
+            & > * {
                 width: 100%;
             }
         }
@@ -207,4 +234,49 @@
     -ms-transition: $args;
     -o-transition: $args;
     transition: $args;
+}
+
+/**
+ * Used to limit the site width.
+ *
+ * @param pixels $max-width
+ */
+@mixin m_sitecontent($max-width: 1380px) {
+    max-width: h_calculate_rem($max-width);
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/**
+ * Typography type: 0
+ */
+@mixin m_typography_0() {
+    h1 {
+        @include h_font-size(34px);
+        font-weight: 300;
+        line-height: h_calculate_rem(40px);
+        margin: 0 0 16px;
+    }
+
+    h2 {
+        @include h_font-size(24px);
+        font-weight: 300;
+        line-height: h_calculate_rem(32px);
+        margin: 0 0 14px;
+    }
+
+    p {
+        @include h_font_size(15px);
+        font-weight: 400;
+        line-height: h_calculate_rem(24px);
+        margin: 0 0 h_calculate_rem(14px);
+    }
+
+    a {
+        text-decoration: none;
+    }
+
+    a:hover {
+        text-decoration: none;
+    }
 }
