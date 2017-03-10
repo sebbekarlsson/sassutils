@@ -269,7 +269,7 @@
         @include h_font_size(15px);
         font-weight: 400;
         line-height: h_calculate_rem(24px);
-        margin: 0 0 h_calculate_rem(14px);
+        margin-top: h_calculate_rem(14px);
     }
 
     a {
