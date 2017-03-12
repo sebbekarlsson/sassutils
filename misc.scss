@@ -157,7 +157,7 @@
             flex: 1;
         }
 
-        @include bp_medium() {
+        @include bp_4() {
             flex-direction: column;
             display: block;
 
@@ -241,7 +241,7 @@
  *
  * @param pixels $max-width
  */
-@mixin m_sitecontent($max-width: 1380px) {
+@mixin m_sitecontent($max-width: $bp_0) {
     max-width: h_calculate_rem($max-width);
     margin-left: auto;
     margin-right: auto;
@@ -269,7 +269,7 @@
         @include h_font_size(15px);
         font-weight: 400;
         line-height: h_calculate_rem(24px);
-        margin: 0 0 h_calculate_rem(14px);
+        margin-top: h_calculate_rem(14px);
     }
 
     a {
