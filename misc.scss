@@ -143,7 +143,7 @@
     }
 }
 
-@mixin m_split($x: true, $y: false) {
+@mixin m_split($x: true, $y: false, $responsive: true) {
     @include h_display_flex();
 
     @if ($x) {
@@ -157,12 +157,14 @@
             flex: 1;
         }
 
-        @include bp_4() {
-            flex-direction: column;
-            display: block;
+        @if ($responsive) {
+            @include bp_4() {
+                flex-direction: column;
+                display: block;
 
-            & > * {
-                width: 100%;
+                & > * {
+                    width: 100%;
+                }
             }
         }
     }
